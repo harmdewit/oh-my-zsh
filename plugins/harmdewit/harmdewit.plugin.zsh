@@ -98,7 +98,7 @@ c() { cd ~/dropbox/code && $1 $2; }
 _c() { _files -W ~/dropbox/code -/; }
 compdef _c c
 
-cc() { cd ~/dropbox/code/current && $1 $2; }
+cc() { cd ~/dropbox/code/current && $1 $2; cd "$(pwd -P)"; }
 _cc() { _files -W ~/dropbox/code/current -/; }
 compdef _cc cc
 
@@ -114,3 +114,4 @@ stud() { cd ~/dropbox/studie/$1; }
 _stud() { _files -W ~/dropbox/studie -/; }
 compdef _stud stud
 
+lorem() { curl metaphorpsum.com/paragraphs/1 | pbcopy && echo '\n Copied:' `pbpaste`}
